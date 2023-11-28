@@ -3,6 +3,7 @@ import Alert from "./components/Alert";
 import ListGroup from "./components/ListGroup";
 import Button from "./components/Button";
 import { useState } from "react";
+import Like from "./components/Like";
 
 const App = () => {
   const [alertVisible, setAlertVisible] = useState(false);
@@ -80,6 +81,14 @@ const App = () => {
       >
         Button
       </Button>
+
+      <hr className="py-4" />
+
+      <Like
+        onClick={() => {
+          console.log("Clicked");
+        }}
+      />
     </div>
   );
 };
