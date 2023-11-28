@@ -1,7 +1,18 @@
 import { MouseEvent, useState } from "react";
 
-function ListGroup() {
-  let items = ["Isfahan", "Tehran", "Mashhad", "Shiraz", "Tabriz"];
+// { items: [], heading: string }
+
+interface Props {
+  items: string[]; // parameter: type
+  heading: string; // parameter: type
+
+  // (item: string) => void
+  onSelectItem: (item: string) => void;
+}
+
+// props: Props  -->  props parameter of Props type
+const ListGroup = ({ items, heading, onSelectItem }: Props) => {
+  // let items = ["Isfahan", "Tehran", "Mashhad", "Shiraz", "Tabriz"]; // moved to App.tsx
   // items = [];
 
   // let selectedIndex = -1; // Bad Practice
@@ -24,7 +35,7 @@ function ListGroup() {
 
   return (
     <>
-      <h1 className="text-4xl">List Group</h1>
+      <h1 className="text-4xl">{heading}</h1>
       {/* {message} */}
       {/* {getMessage()} */}
       {items.length === 0 && <p>No item found</p>}
@@ -41,6 +52,7 @@ function ListGroup() {
             key={index}
             onClick={() => {
               setSelectedIndex(index);
+              onSelectItem(item);
             }}
           >
             <a>
@@ -51,6 +63,6 @@ function ListGroup() {
       </ul>
     </>
   );
-}
+};
 
 export default ListGroup;
