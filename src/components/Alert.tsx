@@ -9,7 +9,7 @@ import { ReactNode } from "react";
 // }
 
 interface Props {
-  children: ReactNode;
+  children: ReactNode; // Pass HTML Tag
   onClose: () => void;
 }
 

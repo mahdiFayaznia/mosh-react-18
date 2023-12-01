@@ -14,8 +14,23 @@ const Like = ({ onClick }: Props) => {
     onClick();
   };
 
-  if (status) return <IoMdHeart color="#ff3333" size={40} onClick={toggle} />;
-  return <IoIosHeartEmpty color="#ff3333" size={40} onClick={toggle} />;
+  if (status)
+    return (
+      <IoMdHeart
+        className="cursor-pointer select-none"
+        color="#ff3333"
+        size={40}
+        onClick={toggle}
+      />
+    );
+  return (
+    <IoIosHeartEmpty
+      className="cursor-pointer select-none"
+      color="#ff3333"
+      size={40}
+      onClick={toggle}
+    />
+  );
 };
 
 export default Like;

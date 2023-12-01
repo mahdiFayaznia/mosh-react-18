@@ -12,7 +12,7 @@ interface Props {
 
 // props: Props  -->  props parameter of Props type
 const ListGroup = ({ items, heading, onSelectItem }: Props) => {
-  // let items = ["Isfahan", "Tehran", "Mashhad", "Shiraz", "Tabriz"]; // moved to App.tsx
+  // let items = ["Isfahan", "Tehran", "Mashhad", "Shiraz", "Tabriz"];
   // items = [];
 
   // let selectedIndex = -1; // Bad Practice
@@ -34,8 +34,8 @@ const ListGroup = ({ items, heading, onSelectItem }: Props) => {
   };
 
   return (
-    <>
-      <h1 className="text-4xl">{heading}</h1>
+    <div>
+      <h1>{heading}</h1>
       {/* {message} */}
       {/* {getMessage()} */}
       {items.length === 0 && <p>No item found</p>}
@@ -61,7 +61,7 @@ const ListGroup = ({ items, heading, onSelectItem }: Props) => {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 
