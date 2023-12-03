@@ -61,13 +61,13 @@ const ManagingComponentState = () => {
   const handleAddArrayElement = () => {
     // Add Element
     setArrayAdd([...arrayAdd, "New Item"]);
-    console.log(arrayAdd);
+    console.log("arrayAdd", arrayAdd);
   };
 
   const handleRemoveArrayElement = () => {
     // Remove Element
     setArrayRemove(arrayRemove.filter((element) => element !== "item3"));
-    console.log(arrayRemove);
+    console.log("arrayRemove", arrayRemove);
   };
 
   const handleUpdateArrayElement = () => {
@@ -77,7 +77,7 @@ const ManagingComponentState = () => {
         element === "item3" ? "Updated Item" : element,
       ),
     );
-    console.log(arrayUpdate);
+    console.log("arrayUpdate", arrayUpdate);
   };
   // /Array
 
@@ -104,14 +104,14 @@ const ManagingComponentState = () => {
     // Add Element
     setAddBugs([...addBugs, { id: 4, title: "New Bug", fixed: false }]);
 
-    console.log(addBugs);
+    console.log("addBugs", addBugs);
   };
 
   const handleRemoveArrayOfObjects = () => {
     // Remove Element
     setRemoveBugs(removeBugs.filter((bug) => bug.id !== 3));
 
-    console.log(removeBugs);
+    console.log("removeBugs", removeBugs);
   };
 
   const handleUpdateArrayOfObjects = () => {
@@ -120,7 +120,7 @@ const ManagingComponentState = () => {
       updateBugs.map((bug) => (bug.id === 3 ? { ...bug, fixed: true } : bug)),
     );
 
-    console.log(updateBugs);
+    console.log("updateBugs", updateBugs);
   };
   // /Array of Objects
 
@@ -134,7 +134,7 @@ const ManagingComponentState = () => {
 
   const handleGamerName = () => {
     setGame({ ...game, player: { ...game.player, name: "Mahdi" } });
-    console.log(game);
+    console.log("game", game);
   };
   // /Exercise-01
 
@@ -146,7 +146,7 @@ const ManagingComponentState = () => {
 
   const handleAddPizza = () => {
     setPizza({ ...pizza, toppings: [...pizza.toppings, "Cheese"] });
-    console.log(pizza);
+    console.log("pizza", pizza);
   };
   // /Exercise-02
 
@@ -166,14 +166,17 @@ const ManagingComponentState = () => {
         item.id === 1 ? { ...item, quantity: item.quantity + 1 } : item,
       ),
     });
-    console.log(cart);
+    console.log("cart", cart);
   };
   // /Exercise-03
 
   return (
     <>
       <div className="py-5">
-        <button className="btn btn-primary" onClick={handleUpdateName}>
+        <button
+          className="btn btn-outline btn-primary"
+          onClick={handleUpdateName}
+        >
           name: {person.firstName}
         </button>
       </div>
@@ -181,7 +184,10 @@ const ManagingComponentState = () => {
       <hr />
 
       <div className="py-5">
-        <button className="btn btn-primary" onClick={handleUpdateZipCode}>
+        <button
+          className="btn btn-outline btn-primary"
+          onClick={handleUpdateZipCode}
+        >
           ZIP Code: {customer.address.zipCode}
         </button>
       </div>
@@ -189,7 +195,10 @@ const ManagingComponentState = () => {
       <hr />
 
       <div className="py-5">
-        <button className="btn btn-primary" onClick={handleAddArrayElement}>
+        <button
+          className="btn btn-outline btn-primary"
+          onClick={handleAddArrayElement}
+        >
           Add Array Elem in Console log # Double Click #
         </button>
       </div>
@@ -197,7 +206,10 @@ const ManagingComponentState = () => {
       <hr />
 
       <div className="py-5">
-        <button className="btn btn-primary" onClick={handleRemoveArrayElement}>
+        <button
+          className="btn btn-outline btn-primary"
+          onClick={handleRemoveArrayElement}
+        >
           Remove Array Elem in Console log # Double Click #
         </button>
       </div>
@@ -205,7 +217,10 @@ const ManagingComponentState = () => {
       <hr />
 
       <div className="py-5">
-        <button className="btn btn-primary" onClick={handleUpdateArrayElement}>
+        <button
+          className="btn btn-outline btn-primary"
+          onClick={handleUpdateArrayElement}
+        >
           Update Array Elem in Console log # Double Click #
         </button>
       </div>
@@ -213,7 +228,10 @@ const ManagingComponentState = () => {
       <hr />
 
       <div className="py-5">
-        <button className="btn btn-primary" onClick={handleAddArrayOfObjects}>
+        <button
+          className="btn btn-outline btn-primary"
+          onClick={handleAddArrayOfObjects}
+        >
           Add Obj to Array in Console Log # Double Click #
         </button>
       </div>
@@ -222,7 +240,7 @@ const ManagingComponentState = () => {
 
       <div className="py-5">
         <button
-          className="btn btn-primary"
+          className="btn btn-outline btn-primary"
           onClick={handleRemoveArrayOfObjects}
         >
           Remove Obj of Array in Console Log # Double Click #
@@ -233,7 +251,7 @@ const ManagingComponentState = () => {
 
       <div className="py-5">
         <button
-          className="btn btn-primary"
+          className="btn btn-outline btn-primary"
           onClick={handleUpdateArrayOfObjects}
         >
           Update Obj of Array in Console Log # Double Click #
@@ -243,7 +261,10 @@ const ManagingComponentState = () => {
       <hr />
 
       <div className="py-5">
-        <button className="btn btn-primary" onClick={handleGamerName}>
+        <button
+          className="btn btn-outline btn-primary"
+          onClick={handleGamerName}
+        >
           Update Gamer Name in Console Log # Double Click #
         </button>
       </div>
@@ -251,7 +272,10 @@ const ManagingComponentState = () => {
       <hr />
 
       <div className="py-5">
-        <button className="btn btn-primary" onClick={handleAddPizza}>
+        <button
+          className="btn btn-outline btn-primary"
+          onClick={handleAddPizza}
+        >
           Add Pizza Item in Console Log # Double Click #
         </button>
       </div>
@@ -259,7 +283,10 @@ const ManagingComponentState = () => {
       <hr />
 
       <div className="py-5">
-        <button className="btn btn-primary" onClick={handleUpdateCart}>
+        <button
+          className="btn btn-outline btn-primary"
+          onClick={handleUpdateCart}
+        >
           Update Cart Item in Console Log # Double Click #
         </button>
       </div>

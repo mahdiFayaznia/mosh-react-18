@@ -29,8 +29,8 @@ const ListGroup = ({ items, heading, onSelectItem }: Props) => {
 
   // Event handler
   const handleClick = (event: MouseEvent) => {
-    console.log(event);
-    console.log(event.target);
+    console.log("event", event);
+    console.log("event.target", event.target);
   };
 
   return (
@@ -41,7 +41,9 @@ const ListGroup = ({ items, heading, onSelectItem }: Props) => {
       {items.length === 0 && <p>No item found</p>}
       <ul className="menu bg-base-200 rounded-box w-56">
         {items.map((item, index) => (
-          // <li key={index} onClick={(event) => console.log(item, index, event)}> // hover on event
+          // <li key={index} onClick={(event) => console.log("item, index, event", item, index, event)}>
+          // hover on event to find the type of event
+
           // <li key={index} onClick={handleClick}>
           <li
             className={

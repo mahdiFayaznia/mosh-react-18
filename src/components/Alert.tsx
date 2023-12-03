@@ -33,7 +33,7 @@ const Alert = ({ children, onClose }: Props) => {
         </svg>
         <span>{children}</span>
         <div>
-          <button className="btn btn-sm" onClick={onClose}>
+          <button className="btn btn-outline btn-sm" onClick={onClose}>
             X
           </button>
         </div>

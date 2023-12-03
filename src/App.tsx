@@ -8,6 +8,11 @@ import ManagingComponentState from "./components/ManagingComponentState";
 import NavBar from "./components/NavBar";
 import Cart from "./components/Cart";
 import ExpandableText from "./components/ExpandableText";
+import FormUseRef from "./components/FormUseRef";
+import FormUseState from "./components/FormUseState";
+import FormUseForm from "./components/FormUseForm";
+import FormUseFormValidation from "./components/FormUseFormValidation";
+import FormUseFormValidationZod from "./components/FormUseFormValidationZod";
 
 const App = () => {
   const [alertVisible, setAlertVisible] = useState(false);
@@ -17,7 +22,7 @@ const App = () => {
   const items2 = ["Apple", "Orange", "Banana", "Cherry", "Peach"];
 
   const handleSelectItem = (item: string) => {
-    console.log(item);
+    console.log("item", item);
   };
 
   return (
@@ -95,6 +100,7 @@ const App = () => {
           </div>
         )}
         <Button
+          color="info"
           onClick={() => {
             setAlertVisible(true);
           }}
@@ -141,6 +147,36 @@ const App = () => {
           blanditiis nihil optio esse amet deserunt iste rerum assumenda rem
           explicabo tempore, commodi repellat aspernatur!
         </ExpandableText>
+      </div>
+
+      <hr />
+
+      <div className="py-5">
+        <FormUseRef />
+      </div>
+
+      <hr />
+
+      <div className="py-5">
+        <FormUseState />
+      </div>
+
+      <hr />
+
+      <div className="py-5">
+        <FormUseForm />
+      </div>
+
+      <hr />
+
+      <div className="py-5">
+        <FormUseFormValidation />
+      </div>
+
+      <hr />
+
+      <div className="py-5">
+        <FormUseFormValidationZod />
       </div>
     </div>
   );
