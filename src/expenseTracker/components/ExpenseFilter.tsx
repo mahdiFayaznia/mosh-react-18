@@ -11,7 +11,7 @@ const ExpenseFilter = ({ onSelectCategory }: Props) => {
         <select
           className="select select-bordered"
           onChange={(event) => onSelectCategory(event.target.value)}
-          defaultValue="All Categories"
+          defaultValue=""
         >
           {/* The first option should not have a value */}
           <option value="">All Categories</option>

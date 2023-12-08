@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Message from "./components/Message";
 import Alert from "./components/Alert";
 import ListGroup from "./components/ListGroup";
@@ -15,17 +15,32 @@ import FormUseFormValidation from "./components/FormUseFormValidation";
 import FormUseFormValidationZod from "./components/FormUseFormValidationZod";
 import FormUseFormValidationZodDisableButton from "./components/FormUseFormValidationZodDisableButton";
 import ExpenseTracker from "./expenseTracker/components/ExpenseTracker";
+import AfterRender from "./components/AfterRender";
+import ProductList from "./components/ProductList";
+import EffectCleanUp from "./components/EffectCleanUp";
+import FetchingData from "./components/FetchingData";
 
 const App = () => {
-  const [alertVisible, setAlertVisible] = useState(false);
-  const [cartItems, setCartItems] = useState(["Product1", "Product2"]);
-
+  // ListGroup
   const items1 = ["Isfahan", "Tehran", "Mashhad", "Shiraz", "Tabriz"];
   const items2 = ["Apple", "Orange", "Banana", "Cherry", "Peach"];
 
   const handleSelectItem = (item: string) => {
     console.log("item", item);
   };
+  // /ListGroup
+
+  // Alert
+  const [alertVisible, setAlertVisible] = useState(false);
+  // /Alert
+
+  // NavBar & Cart
+  const [cartItems, setCartItems] = useState(["Product1", "Product2"]);
+  // /NavBar & Cart
+
+  // ProductList
+  const [category, setCategory] = useState("");
+  // /ProductList
 
   return (
     <div className="p-5">
@@ -191,6 +206,47 @@ const App = () => {
 
       <div className="py-5">
         <ExpenseTracker />
+      </div>
+
+      <hr />
+
+      <div className="py-5">
+        <AfterRender />
+      </div>
+
+      <hr />
+
+      <div className="py-5">
+        <ProductList category={category} />
+
+        <div>
+          <label className="form-control w-full max-w-xs">
+            <div className="label">
+              <span className="label-text">ProductList category</span>
+            </div>
+            <select
+              className="select select-bordered"
+              defaultValue=""
+              onChange={(event) => setCategory(event.target.value)}
+            >
+              <option value="">Select product</option>
+              <option value="Clothing">Clothing</option>
+              <option value="Household">Household</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <hr />
+
+      <div className="py-5">
+        <EffectCleanUp />
+      </div>
+
+      <hr />
+
+      <div className="py-5">
+        <FetchingData />
       </div>
     </div>
   );
