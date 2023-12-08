@@ -13,6 +13,8 @@ import FormUseState from "./components/FormUseState";
 import FormUseForm from "./components/FormUseForm";
 import FormUseFormValidation from "./components/FormUseFormValidation";
 import FormUseFormValidationZod from "./components/FormUseFormValidationZod";
+import FormUseFormValidationZodDisableButton from "./components/FormUseFormValidationZodDisableButton";
+import ExpenseTracker from "./expenseTracker/components/ExpenseTracker";
 
 const App = () => {
   const [alertVisible, setAlertVisible] = useState(false);
@@ -177,6 +179,18 @@ const App = () => {
 
       <div className="py-5">
         <FormUseFormValidationZod />
+      </div>
+
+      <hr />
+
+      <div className="py-5">
+        <FormUseFormValidationZodDisableButton />
+      </div>
+
+      <hr />
+
+      <div className="py-5">
+        <ExpenseTracker />
       </div>
     </div>
   );

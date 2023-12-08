@@ -1,4 +1,4 @@
-import { FieldValues, useForm } from "react-hook-form";
+import { useForm, FieldValues } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -35,17 +35,21 @@ const FormUseFormValidationZod = () => {
   // console.log("formState.errors", formState.errors);
   console.log("formState.errors", errors);
 
-  const onSubmit = (data: FieldValues) => console.log("data", data);
+  const onSubmit = (data: FieldValues) => {
+    console.log("data", data);
+  };
 
   return (
     // <form onSubmit={handleSubmit((data) => console.log("data", data))}>
     // hover on data to find the type of data
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
         <div className="mb-3">
           <label className="form-control w-full">
             <div className="label">
-              <span className="label-text">useFormValidationZod - Name:</span>
+              <span className="label-text font-semibold">
+                useFormValidationZod - Name:
+              </span>
             </div>
             <input
               type="text"
@@ -67,7 +71,9 @@ const FormUseFormValidationZod = () => {
         <div className="mb-3">
           <label className="form-control w-full">
             <div className="label">
-              <span className="label-text">useFormValidationZod - Age:</span>
+              <span className="label-text font-semibold">
+                useFormValidationZod - Age:
+              </span>
             </div>
             <input
               type="number"

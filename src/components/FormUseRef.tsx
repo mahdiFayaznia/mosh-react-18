@@ -35,11 +35,11 @@ const FormUseRef = () => {
     //   }}
     // >
     <form onSubmit={handleSubmit}>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
         <div className="mb-3">
           <label className="form-control w-full">
             <div className="label">
-              <span className="label-text">useRef - Name:</span>
+              <span className="label-text font-semibold">useRef - Name:</span>
             </div>
             <input
               type="text"
@@ -53,7 +53,7 @@ const FormUseRef = () => {
         <div className="mb-3">
           <label className="form-control w-full">
             <div className="label">
-              <span className="label-text">useRef - Age:</span>
+              <span className="label-text font-semibold">useRef - Age:</span>
             </div>
             <input
               type="number"

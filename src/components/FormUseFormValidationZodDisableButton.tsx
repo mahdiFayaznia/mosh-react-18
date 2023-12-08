@@ -1,18 +1,36 @@
 import { useForm, FieldValues } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-interface FormData {
-  // shape of the form
-  name: string;
-  age: number;
-}
+// const schema = z.object({
+//   name: z.string().min(3),
+//   age: z.number().min(18),
+// });
 
-const FormUseFormValidation = () => {
+const schema = z.object({
+  name: z
+    .string()
+    .min(3, { message: "The name must be at least 3 characters." }),
+  age: z
+    .number({ invalid_type_error: "age field is required." })
+    .min(18, { message: "The age must be at least 18" }),
+});
+
+type FormData = z.infer<typeof schema>; // type and interface are similar
+
+// interface FormData {
+//   // shape of the form
+//   name: string;
+//   age: number;
+// }
+
+const FormUseFormValidationZodDisableButton = () => {
   const {
     register,
     handleSubmit,
     formState,
-    formState: { errors }, // Nested Destructuring
-  } = useForm<FormData>();
+    formState: { errors, isValid }, // Nested Destructuring
+  } = useForm<FormData>({ resolver: zodResolver(schema) });
   console.log("formState", formState);
   // console.log("formState.errors", formState.errors);
   console.log("formState.errors", errors);
@@ -30,27 +48,21 @@ const FormUseFormValidation = () => {
           <label className="form-control w-full">
             <div className="label">
               <span className="label-text font-semibold">
-                useFormValidation - Name:
+                useFormValidationZodDisableButton - Name:
               </span>
             </div>
             <input
               type="text"
-              placeholder="useFormValidation - Name"
+              placeholder="useFormValidationZodDisableButton - Name"
               className="input input-bordered w-full max-w-md"
-              {...register("name", { required: true, minLength: 3 })}
+              {...register("name")}
             />
           </label>
-          {errors.name?.type === "required" && (
+          {/* if the errors exist */}
+          {errors.name && (
             <div className="label">
               <span className="label-text-alt text-red-500">
-                The name field is required.
-              </span>
-            </div>
-          )}
-          {errors.name?.type === "minLength" && (
-            <div className="label">
-              <span className="label-text-alt text-red-500">
-                The name must be at least 3 characters.
+                {errors.name.message}
               </span>
             </div>
           )}
@@ -60,28 +72,29 @@ const FormUseFormValidation = () => {
           <label className="form-control w-full">
             <div className="label">
               <span className="label-text font-semibold">
-                useFormValidation - Age:
+                useFormValidationZodDisableButton - Age:
               </span>
             </div>
             <input
               type="number"
-              placeholder="useFormValidation - Age"
+              placeholder="useFormValidationZodDisableButton - Age"
               className="input input-bordered w-full max-w-md"
-              {...register("age", { required: true })}
+              {...register("age", { valueAsNumber: true })}
             />
           </label>
-          {errors.age?.type === "required" && (
+          {/* if the errors exist */}
+          {errors.age && (
             <div className="label">
               <span className="label-text-alt text-red-500">
-                The age field is required.
+                {errors.age.message}
               </span>
             </div>
           )}
         </div>
 
         <div className="mb-3 flex items-end">
-          <button className="btn btn-warning">
-            useFormValidation - Submit
+          <button disabled={!isValid} className="btn btn-error">
+            useFormValidationZodDisableButton - Submit
           </button>
         </div>
       </div>
@@ -89,4 +102,4 @@ const FormUseFormValidation = () => {
   );
 };
 
-export default FormUseFormValidation;
+export default FormUseFormValidationZodDisableButton;

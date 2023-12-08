@@ -16,11 +16,11 @@ const FormUseState = () => {
     //   }}
     // >
     <form onSubmit={handleSubmit}>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
         <div className="mb-3">
           <label className="form-control w-full">
             <div className="label">
-              <span className="label-text">useState - Name:</span>
+              <span className="label-text font-semibold">useState - Name:</span>
             </div>
             <input
               type="text"
@@ -37,7 +37,7 @@ const FormUseState = () => {
         <div className="mb-3">
           <label className="form-control w-full">
             <div className="label">
-              <span className="label-text">useState - Age:</span>
+              <span className="label-text font-semibold">useState - Age:</span>
             </div>
             <input
               type="number"

@@ -7,14 +7,14 @@ const Cart = ({ cartItems, onClear }: Props) => {
   return (
     <>
       <div>Cart</div>
-      <ul className="menu bg-base-200 rounded-box w-40">
+      <ul className="menu bg-base-200 rounded-box w-40 my-3">
         {cartItems.map((item) => (
           <li key={item}>
             <a>{item}</a>
           </li>
         ))}
       </ul>
-      <div className="pt-3">
+      <div>
         <button className="btn btn-primary" onClick={onClear}>
           Clear
         </button>
