@@ -182,7 +182,7 @@ const FetchingData = () => {
         <h1>Handling Error</h1>
 
         {error3 && (
-          <p>
+          <p className="mb-3">
             <span className="rounded bg-red-400 px-2 py-1 text-red-950">
               {error3}
             </span>
@@ -203,7 +203,7 @@ const FetchingData = () => {
         <h1>Abort Controller</h1>
 
         {error5 && (
-          <p>
+          <p className="mb-3">
             <span className="rounded bg-red-400 px-2 py-1 text-red-950">
               {error5}
             </span>
@@ -224,7 +224,7 @@ const FetchingData = () => {
         <h1>Abort Controller - Remove canceled</h1>
 
         {error6 && (
-          <p>
+          <p className="mb-3">
             <span className="rounded bg-red-400 px-2 py-1 text-red-950">
               {error6}
             </span>
@@ -242,10 +242,10 @@ const FetchingData = () => {
       <hr />
 
       <div className="py-5">
-        <h1>Abort Controller - Remove canceled</h1>
+        <h1>Loading Indicator</h1>
 
         {error7 && (
-          <p>
+          <p className="mb-3">
             <span className="rounded bg-red-400 px-2 py-1 text-red-950">
               {error7}
             </span>

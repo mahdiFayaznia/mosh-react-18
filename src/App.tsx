@@ -19,6 +19,7 @@ import AfterRender from "./components/AfterRender";
 import ProductList from "./components/ProductList";
 import EffectCleanUp from "./components/EffectCleanUp";
 import FetchingData from "./components/FetchingData";
+import FetchingDataActions from "./components/FetchingDataActions";
 
 const App = () => {
   // ListGroup
@@ -247,6 +248,12 @@ const App = () => {
 
       <div className="py-5">
         <FetchingData />
+      </div>
+
+      <hr />
+
+      <div className="py-5">
+        <FetchingDataActions />
       </div>
     </div>
   );
