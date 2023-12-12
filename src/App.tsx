@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Message from "./components/Message";
 import Alert from "./components/Alert";
 import ListGroup from "./components/ListGroup";
@@ -14,12 +14,13 @@ import FormUseForm from "./components/FormUseForm";
 import FormUseFormValidation from "./components/FormUseFormValidation";
 import FormUseFormValidationZod from "./components/FormUseFormValidationZod";
 import FormUseFormValidationZodDisableButton from "./components/FormUseFormValidationZodDisableButton";
-import ExpenseTracker from "./expenseTracker/components/ExpenseTracker";
+import ExpenseTracker from "./expense-tracker/components/ExpenseTracker";
 import AfterRender from "./components/AfterRender";
 import ProductList from "./components/ProductList";
 import EffectCleanUp from "./components/EffectCleanUp";
 import FetchingData from "./components/FetchingData";
 import FetchingDataActions from "./components/FetchingDataActions";
+import FetchingDataActionsWithAPI from "./components/FetchingDataActionsWithAPI";
 
 const App = () => {
   // ListGroup
@@ -254,6 +255,12 @@ const App = () => {
 
       <div className="py-5">
         <FetchingDataActions />
+      </div>
+
+      <hr />
+
+      <div className="py-5">
+        <FetchingDataActionsWithAPI />
       </div>
     </div>
   );
